@@ -36,7 +36,7 @@ namespace CreateDataBaseProject_DotNetCore
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            var connection = @"Data Source=192.168.1.2;Initial Catalog=MyTestDB;uid=sa;pwd=Sqladm!n";
+            var connection = @"Data Source={source};Initial Catalog={dbname};uid={uid};pwd={pwd}";
             services.AddDbContext<MyDBContext>(options => options.UseSqlServer(connection));
         }
 
